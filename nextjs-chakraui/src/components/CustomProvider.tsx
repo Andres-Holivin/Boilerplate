@@ -9,16 +9,16 @@ import LoadingPage from "./LoadingPage";
 export default function CustomProvider({ children, }: { children: React.ReactNode }) {
     return (
         <Provider store={store}>
-            {/* <CacheProvider> */}
-            <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-            <ChakraProvider theme={theme} cssVarsRoot="body">
-                <Box w="100vw" h="100vh" minH="100vh">
-                    <PersistGate loading={<LoadingPage />} persistor={persistor}>
-                        {children}
-                    </PersistGate>
-                </Box>
-            </ChakraProvider>
-            {/* </CacheProvider> */}
+            <CacheProvider>
+                <ChakraProvider theme={theme} cssVarsRoot="body">
+                    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+                    <Box w="100vw" h="100vh" minH="100vh">
+                        <PersistGate loading={<LoadingPage />} persistor={persistor}>
+                            {children}
+                        </PersistGate>
+                    </Box>
+                </ChakraProvider>
+            </CacheProvider>
         </Provider>
     )
 }

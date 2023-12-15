@@ -1,0 +1,22 @@
+<div class="p-4 h-full shadow-md rounded-lg flex flex-col gap-2 justify-center">
+  <h4>{{propsPost?.title?.toUpperCase()}}</h4>
+  <div class="flex gap-2 p-2 items-center">
+    <p>
+      {{propsPost?.reactions}}
+    </p>
+    <mat-icon class="text-yellow-500" aria-hidden="false" aria-label="Example home icon" fontIcon="star"></mat-icon>
+    <div>|</div>
+    <p>{{propsPost?.tags}}</p>
+  </div>
+  <hr />
+  <div class="flex justify-between items-center w-full">
+    <div>Price: {{propsPost?.reactions}}</div>
+    <button (click)="openDialog()" class="bg-orange-200 text-orange-700 flex p-2 rounded-lg gap-2">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="chat"></mat-icon>
+      <p>
+        Detail
+      </p>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_forward"></mat-icon>
+    </button>
+  </div>
+</div>

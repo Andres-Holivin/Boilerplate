@@ -1,0 +1,25 @@
+<div class="p-4">
+  <div>
+    <h3>{{data.post?.title?.toUpperCase()}}</h3>
+    <div class="flex justify-between">
+      <div class="flex gap-2">
+        <p>{{data.post?.reactions}} Points</p>
+        <div>|</div>
+        <p>{{data.post?.tags}} </p>
+      </div>
+      <div>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="chat"></mat-icon>
+        {{listComment?.comments?.length}} Comment
+      </div>
+    </div>
+    <hr />
+    @for (item of listComment?.comments; track $index) {
+    <div class="bg-gray-200 rounded-md my-2 p-4">
+      <h3>{{item.user.username}}</h3>
+      <p>{{item.body}}</p>
+    </div>
+    }@empty {
+    <li> There are no items. </li>
+    }
+  </div>
+</div>

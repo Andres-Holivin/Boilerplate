@@ -1,0 +1,13 @@
+<div class="grid grid-cols-2 gap-2 p-4">
+  @for (item of ListPost?.posts; track item.id;let i=$index) {
+  <div *ngIf="(i>=(i)-(i%8)&&i<=((i)-(i%8)+3))==true; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>
+    <div><app-card [propsPost]="item"></app-card></div>
+  </ng-template>
+  <ng-template #elseBlock>
+    <div class="col-span-2"><app-list [propsPost]="item"></app-list></div>
+  </ng-template>
+  } @empty {
+  <li> There are no items. </li>
+  }
+</div>
